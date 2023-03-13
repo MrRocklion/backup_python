@@ -5,7 +5,7 @@ import numpy as np
 import uuid
 
 
-
+no_img = "https://firebasestorage.googleapis.com/v0/b/app-mantenimiento-91156.appspot.com/o/inventario%2FSP.PNG?alt=media&token=835f72e6-3ddf-4e64-bd7c-b95564da4ec8"
 
 cred = credentials.Certificate("firebase/public-key.json")
 firebase_admin.initialize_app(cred)
@@ -99,7 +99,7 @@ for equipo in equipos:
     equipo['accesorios'] = obtenerAccesorios(equipo['codigo'])
     equipo['codigos_historial'] = [equipo['codigo']]
     equipo['equipo'] = obtenerEquipo(int(codigo[4]))
-    equipo['img'] = "sin dato"
+    equipo['img'] = no_img
     equipo['mantenimientos'] = []
     equipo['ubicacion'] = obtenerUbicaciones(int(codigo[0]))
     equipo['departamento'] = obtenerDepartamento(int(codigo[1]))
